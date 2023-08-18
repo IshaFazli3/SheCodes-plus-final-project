@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
   integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <link rel="stylesheet" href="style.css">
 
   <title>Weather app</title>
@@ -14,31 +15,32 @@
     <div class="weather-app-wrapper">
       <div class="weather-app">
         <div class="overview">
-  <h1>New York</h1>
+  <h1 id="city">Arlington</h1>
   <ul>
-    <li>Friday 05:00</li>
-    <li>Clear</li>
+    <li id="date">Last updated: <span id="date"></span></li>
+    <li id="description">Clear</li>
   </ul>
   </div>
   <div class="row">
     <div class="col-sm-6">
       <div class="d-flex weather-temperature">
       <img src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v10/Condition_Card/MostlySunnyDay.svg" alt="Clear" id="icon">
-     <div><strong id="temperature">12</strong><span class="units">°C | <a href="#"> °F </a></span></div>
+     <div><strong 
+      id="temperature">12</strong>
+      <span class="units">°C | <a href="#"> °F </a></span></div>
   </div>
     </div>
     <div class="col-sm-6">
       <ul>
-        <li>Precipitation: 0%</li>
-        <li>Humidity: 75%</li>
-        <li>Wind: 2 km/h</li>
+        <li>Humidity: <span id="humidity"></span>%</li>
+        <li>Wind: <span id="wind"></span> km/h</li>
       </ul>
     </div>
   </div>
 </div>
   </div>
   <small>
-    <a href="https://github.com/IshaFazli3/SheCodes-plus-final-project.git" target="_blank">Open-source code</a> by Isha Fazli
+    <a href="https://github.com/IshaFazli3/SheCodes-plus-final-project.git" target="_blank" id="open-source-sentence">Open-source code</a> by Isha Fazli
    </small>
 </div>
   <script src="src/app.js"></script>
