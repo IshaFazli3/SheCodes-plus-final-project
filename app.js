@@ -21,8 +21,9 @@ function displayTemperature(response) {
   let cityElement = doucment.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("wind");
-  let dateElement = document.querySelector("date");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
   
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -30,9 +31,11 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.main.speed);
   dateElmenet.innerHTML = formatDate(response.data.dt = 1000);
+  iconElement.setAttribute("src", "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png");
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
   let apiKey = "c7bc0ta3bd1b1ab473o02ceeefd78e44";
-  let apiUrl = "https://api.shecodes.io/weather/v1/current?query=Lisbon&key=c7bc0ta3bd1b1ab473o02ceeefd78e44&units=metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${city}&key={apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
