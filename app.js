@@ -35,7 +35,22 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+
+function search(city){
   let apiKey = "c7bc0ta3bd1b1ab473o02ceeefd78e44";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${city}&key={apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayTemperature);
+
+}
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("city-input");
+  search(cityInputElement.value);
+}
+
+  search("Seattle");
+
+  let form = document.querySelector("search-form");
+  form.addEventListener("submit", handleSubmit);
