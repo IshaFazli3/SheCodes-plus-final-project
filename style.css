@@ -75,3 +75,7 @@ opacity: 0.5;
 .weather-forcast-temperature {
   font-size: 13px;
 }
+ #github-link {
+  margin:  0 auto;
+  display: block;
+ }

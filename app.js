@@ -44,10 +44,9 @@ function displayForecast(response) {
     <div class="col-2">
       <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
       
-      <img src="https://assets.msn.com/weathermapdata/1/static/weather/Icons/taskbar_v10/Condition_Card/C${
+      <img src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
         forecastDay.condition.icon
-      }.svg" 
-      alt="moon pic" width="42px">
+      }.png" alt="" width="42" />
       <div class="weather-forecast-temperature">
         <span class="weather-forecast-temperature-max">${Math.round(
           forecastDay.temperature.maximum
@@ -64,7 +63,6 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
     
-getForecast(response.data.coordinates);
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -83,7 +81,6 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
 
 
-
   celsiusTemperature = response.data.temperature.current;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -95,6 +92,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
 
+  getForecast(response.data.coordinates);
 }
 
 
